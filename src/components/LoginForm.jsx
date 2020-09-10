@@ -1,12 +1,15 @@
 import react from 'react'
+import { useHistory } from 'react-router-dom'
 
 const ROOT_URL = "http://yoshi.willandskill.eu:8999/api/1v/";
 const LOGIN_URL = `${ROOT_URL}auth/api-token-auth/`;
 
 export default function LoginForm() {
+    const history = useHistory()
+    
     const [email, setEmail] = useState("test.user@willandskill.se")
     const [password, setPassword] = useState("js-lesson-10")
-    const [token, setToken] = useState(null)
+
 
     function login() {
         const payload = {
@@ -24,6 +27,7 @@ export default function LoginForm() {
             .then(res => res.json())
             .then(data => {
                 setToken(data.token)
+                history.push("/event-list")
             })
     }
     return(
