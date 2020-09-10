@@ -1,26 +1,30 @@
 import React, { useState } from "react";
-import { Switch, Route } from 'react-route-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import LoginPage from "./Pages/LoginPage";
 import EventListPage from "./Pages/EventListPage";
+import { UserContext } from "./context/UserContext";
 
 
 
 function App(){
-  const [token, setToken]= useState(null)
+  const [token, setToken] = useState(null)
+
   return (
     <div>
+      <UserContext.Provider value={{token, setToken}}>
       <Switch>
 
         <Route path="/event-list">
-          <EventListPage token={token} setToken={setToken}/>
+          <EventListPage />
         </Route>
 
         <Route path="/">
-     <LoginPage token={token} setToken={setToken}/>
+     <LoginPage />
         </Route>
 
         </Switch>
+        </UserContext.Provider>
     </div>
   );
 }

@@ -1,4 +1,5 @@
-import react from 'react'
+import React, { useState, useContext }from 'react'
+import { UserContext } from '../context/UserContext'
 import { useHistory } from 'react-router-dom'
 
 const ROOT_URL = "http://yoshi.willandskill.eu:8999/api/1v/";
@@ -6,10 +7,10 @@ const LOGIN_URL = `${ROOT_URL}auth/api-token-auth/`;
 
 export default function LoginForm() {
     const history = useHistory()
-    
+
     const [email, setEmail] = useState("test.user@willandskill.se")
     const [password, setPassword] = useState("js-lesson-10")
-
+    const {setToken} = useContext(UserContext)
 
     function login() {
         const payload = {
