@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import LoginPage from "./Pages/LoginPage";
 import EventListPage from "./Pages/EventListPage";
+import EventDetailPage from "./Pages/EventListPage";
 import { UserContext } from "./context/UserContext";
 
 
@@ -14,6 +15,10 @@ function App(){
     <div>
       <UserContext.Provider value={{token, setToken}}>
       <Switch>
+        
+          <Route path="/event/:slug" component={EventDetailPage} />
+        
+          
 
         <Route path="/event-list">
           <EventListPage />
