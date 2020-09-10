@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import LoginForm from './components/LoginForm';
+
 
 
 function App(){
 
   return (
     <div>
-      <h1>Event app </h1>
-     <LoginForm/>
+     
     </div>
   );
 }

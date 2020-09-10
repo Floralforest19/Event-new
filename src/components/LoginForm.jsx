@@ -50,3 +50,4 @@ export default function LoginForm() {
             <button onClick={login}>Login</button>
         </div>
     )
+}
