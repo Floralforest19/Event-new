@@ -2,8 +2,8 @@ import React, { useState, useContext }from 'react'
 import { UserContext } from '../context/UserContext'
 import { useHistory } from 'react-router-dom'
 
-const ROOT_URL = "http://yoshi.willandskill.eu:8999/api/1v/";
-const LOGIN_URL = `${ROOT_URL}auth/api-token-auth/`;
+const ROOT_URL = "http://yoshi.willandskill.eu:8999/api/v1/"
+const LOGIN_URL = `${ROOT_URL}auth/api-token-auth/`
 
 export default function LoginForm() {
     const history = useHistory()
